@@ -1,3 +1,13 @@
+// The scraper works in the following way:
+// 1.) The Python stitcher adds a link to this JavaScript at the bottom of the file.
+// 2.) Once the file completed loading, it adds a button to initiate scraping at the top of the massive HTML file as well as a text box to store the content
+// 3.) Once you hit the button (Please make sure the content has completed loading into the browser first!) the scraping begins.
+//     Depending on how much data you have, this can take a significant amount of time (Took about 30 minutes for 12.000 articles)!
+//     The scraper is very basic. It doesn't handle edge-cases and everything except the document body as well as the headline might be wrongly classified.
+//     When copying the JSON file, make sure you use an editor that scales well. Atom crashed immediately whilst Sublime was perfectly happy guzzling the 12.000 articles.
+
+//     I do not have any intention of maintaining this scraper. It is a one-off tool.
+
 document.body.onload = function(){
   console.log("Done.");
   dnExecuteButton = document.createElement('button');
